@@ -80,6 +80,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script type = "text/javascript">
         function search() {
+	    $("#output").html("");
             var input1 = document.getElementById("input1").value;
             var input2 = document.getElementById("input2").value;
             $.post("http://" + window.location.hostname + ":5000", {term: input1, subreddit: input2},

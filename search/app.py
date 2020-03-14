@@ -14,6 +14,10 @@ def index():
         return 'Use Post Method'
     term = request.form['term']
     subreddit = request.form['subreddit']
+    if term == None or term == '':
+        return '<div id = "title">No Results</div>'
+    if subreddit == None or subreddit == '':
+        subreddit = 'all'
 
     keyword = term.replace(' ', '-')
     db = pymongo.MongoClient().redditDatabase
@@ -38,7 +42,7 @@ def index():
     product = search.search(keyword, subreddit)
 
     if not product[keyword]['posts']:
-        return 'No Results'
+        return '<div id = "title">No Results</div>'
 
     print('[Database] Saving')
     query = level1[product[keyword]['subreddit']]
