@@ -14,4 +14,4 @@ You can then access and utilize the search engine:
 ```
 http://<hostname>:<host port>
 ```
-where the *host port* refers to the host port number defined for the *website* folder
+where the *host port* refers to the host port number defined for the folder *website*
